@@ -17,6 +17,9 @@ body {
     /* above is for visual distinction */
     padding: 2%;
     display: grid;
+    height: 95vh;
+    aspect-ratio: 2/3;
+    grid-template-rows: 1fr 5fr;
 }
 
 #display {
