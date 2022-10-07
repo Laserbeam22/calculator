@@ -7,6 +7,9 @@
 body {
     background-color: rgb(107, 196, 107);
     /* above is for visual distinction */
+    min-height: 100%;
+    max-width: fit-content;
+    margin: auto;
 }
 
 #container {
