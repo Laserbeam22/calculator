@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -15,12 +16,15 @@ body {
 #container {
     background-color: rgb(149, 255, 250);
     /* above is for visual distinction */
-    padding: 2%;
+    padding: 5%;
     display: grid;
     height: 95vh;
     aspect-ratio: 2/3;
     grid-template-rows: 1fr 5fr;
     margin-top: 2vh;
+    border-radius: 2%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 10px solid rgb(135 237 232);
 }
 
 #display {
@@ -31,6 +35,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding-right: 4%;
+    border-radius: 7px;
 }
 
 #buttons {
@@ -40,7 +45,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 3px;
+    gap: 12px;
+    padding-top: 1vh;
 }
 
 #equals {
@@ -54,6 +60,9 @@ body {
 
 #buttons > button {
     font-size: 6vh;
+    border-radius: 7px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 4px solid rgb(20, 103, 99);
 }
 
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #decimal {
@@ -65,6 +74,6 @@ body {
 }
 
 #buttons > #ac {
-    color: rgb(255, 68, 0);
+    color: rgb(198, 0, 0);
     background-color: rgb(253, 165, 124);
 }
