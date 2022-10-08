@@ -13,7 +13,7 @@ body {
 }
 
 #container {
-    background-color: lightseagreen;
+    background-color: rgb(149, 255, 250);
     /* above is for visual distinction */
     padding: 2%;
     display: grid;
@@ -24,7 +24,8 @@ body {
 }
 
 #display {
-    background-color: rgb(239, 174, 99);
+    background-color: rgb(0, 0, 0);
+    color: lightseagreen;
     font-size: 10vh;
     display: flex;
     justify-content: flex-end;
@@ -33,9 +34,9 @@ body {
 }
 
 #buttons {
-    background-color: rgb(45, 112, 112);
+    background-color:rgb(149, 255, 250);
     /* above is for visual distinction */
-    padding: 1%;
+    margin-top: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
@@ -47,6 +48,8 @@ body {
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 6;
+    background-color: rgb(3, 167, 167);
+    color: rgb(40, 215, 206);
 }
 
 #buttons > button {
