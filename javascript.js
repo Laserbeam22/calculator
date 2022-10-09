@@ -44,7 +44,9 @@ buttons.forEach((button ) => {
         if (event.target.textContent == "AC") {
             return ac();
         }
-        num1.push(event.target.textContent);
-        display.textContent = num1.join(''); 
+        if (!event.target.classList.contains("operator")) {
+            num1.push(event.target.textContent);
+            display.textContent = num1.join(''); 
+        }
     })
 })
