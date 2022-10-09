@@ -49,5 +49,11 @@ buttons.forEach((button ) => {
             num1.push(event.target.textContent);
             display.textContent = num1.join(''); 
         }
+        if (event.target.classList.contains("operator")) {
+            if (chosenOperator.length > 0){
+                chosenOperator.length = 0;
+            }
+            chosenOperator.push(event.target.id);
+        }
     })
 })
