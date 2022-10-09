@@ -38,6 +38,7 @@ const buttons = document.querySelectorAll("button");
 
 const num1 = new Array()
 const num2 = new Array();
+const chosenOperator = new Array();
 
 buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
