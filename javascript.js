@@ -36,3 +36,10 @@ const buttons = document.querySelectorAll("button");
 
 const num1 = new Array()
 const num2 = new Array();
+
+buttons.forEach((button ) => {
+    button.addEventListener('click', (event) => {
+        num1.push(event.target.textContent);
+        display.textContent = num1.join(''); 
+    })
+})
