@@ -16,6 +16,8 @@ const divide = function(a, b) {
 
 const ac = function() {
     display.replaceChildren("0");
+    num1.length = 0;
+    num2.length = 0;
 }
 
 const operate = function(operator, a, b) {
@@ -39,6 +41,9 @@ const num2 = new Array();
 
 buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
+        if (event.target.textContent == "AC") {
+            return ac();
+        }
         num1.push(event.target.textContent);
         display.textContent = num1.join(''); 
     })
