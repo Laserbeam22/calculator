@@ -14,6 +14,10 @@ const divide = function(a, b) {
     return a / b;
 }
 
+const ac = function() {
+    display.replaceChildren("0");
+}
+
 const operate = function(operator, a, b) {
     if(operator == add) {
         return add(a, b);
