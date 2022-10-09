@@ -32,3 +32,7 @@ const operate = function(operator, a, b) {
     }
 
 }
+const buttons = document.querySelectorAll("button");
+
+const num1 = new Array()
+const num2 = new Array();
