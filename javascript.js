@@ -20,14 +20,17 @@ const ac = function() {
     num2.length = 0;
 }
 
-const operate = function(operator, a, b) {
-    if(operator == add) {
+const operate = function(chosenOperator, num1, num2) {
+    const a = num1.join('');
+    const b = num2.join(''); 
+
+    if(chosenOperator == add) {
         return add(a, b);
-    } else if (operator == subtract) {
+    } else if (chosenOperator == subtract) {
         return subtract(a, b);
-    } else if (operator == multiply) {
+    } else if (chosenOperator == multiply) {
         return multiply(a, b);
-    } else if (operator == divide) {
+    } else if (chosenOperator == divide) {
         return divide(a, b);
     } else {
         return "Error. Please choose one of the following: add, subtract, multiply, or divide";
@@ -36,7 +39,7 @@ const operate = function(operator, a, b) {
 }
 const buttons = document.querySelectorAll("button");
 
-const num1 = new Array()
+const num1 = new Array();
 const num2 = new Array();
 const chosenOperator = new Array();
 
