@@ -22,6 +22,13 @@ const ac = function() {
     chosenOperator.length = 0;
 }
 
+const buttons = document.querySelectorAll("button");
+
+const num1 = new Array();
+const num2 = new Array();
+const chosenOperator = new Array();
+const currentValue = new Array();
+
 const operate = function(chosenOperator, num1, num2) {
     const a = num1.join('');
     const b = num2.join(''); 
@@ -39,12 +46,6 @@ const operate = function(chosenOperator, num1, num2) {
     }
 
 }
-const buttons = document.querySelectorAll("button");
-
-const num1 = new Array();
-const num2 = new Array();
-const chosenOperator = new Array();
-const currentValue = new Array();
 
 buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
