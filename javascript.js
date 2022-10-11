@@ -53,8 +53,12 @@ buttons.forEach((button ) => {
             return ac();
         }
         if (eq) {
+            dec.disabled = false;
             return equals();
-        }        
+        }
+        if (event.target == dec) {
+            dec.disabled = true;
+        }       
         if (currentValue.length > 0) {
             num1.length = 0;
             num2.length = 0;
@@ -72,6 +76,7 @@ buttons.forEach((button ) => {
                 chosenOperator.length = 0;
             }
             chosenOperator.push(event.target.id);
+            dec.disabled = false;
         } else {
             return "Error.";
         }
