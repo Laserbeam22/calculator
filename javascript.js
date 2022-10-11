@@ -51,6 +51,9 @@ buttons.forEach((button ) => {
         if (event.target.textContent == "AC") {
             return ac();
         }
+        if (eq) {
+            return equals();
+        }        
         if (currentValue.length > 0) {
             num1.length = 0;
             num2.length = 0;
