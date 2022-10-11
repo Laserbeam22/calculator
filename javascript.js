@@ -45,18 +45,31 @@ const operate = function(operator, a, b) {
 
 buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
+        const op = event.target.classList.contains("operator");
+        const eq = event.target.classList.contains("equals");
+
         if (event.target.textContent == "AC") {
             return ac();
         }
-        if (!event.target.classList.contains("operator")) {
+        if (currentValue.length > 0) {
+            num1.length = 0;
+            num2.length = 0;
+            num1.push(currentValue[0]);
+        }
+        if (num1.length > 0 && chosenOperator.length > 0 && !op) {
+            num2.push(event.target.textContent);
+            display.textContent = num2.join('');
+            currentValue.length = 0;
+        } else if (!op) {
             num1.push(event.target.textContent);
             display.textContent = num1.join(''); 
-        }
-        if (event.target.classList.contains("operator")) {
-            if (chosenOperator.length > 0){
+        } else if (op) {
+            if (chosenOperator.length > 0) {
                 chosenOperator.length = 0;
             }
             chosenOperator.push(event.target.id);
+        } else {
+            return "Error.";
         }
     })
 })
