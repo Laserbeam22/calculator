@@ -29,22 +29,18 @@ const num2 = new Array();
 const chosenOperator = new Array();
 const currentValue = new Array();
 
-const operate = function(chosenOperator, num1, num2) {
-    const a = num1.join('');
-    const b = num2.join(''); 
-
-    if(chosenOperator == add) {
+const operate = function(operator, a, b) {
+    if(operator == 'add') {
         return add(a, b);
-    } else if (chosenOperator == subtract) {
+    } else if (operator == 'subtract') {
         return subtract(a, b);
-    } else if (chosenOperator == multiply) {
+    } else if (operator == 'multiply') {
         return multiply(a, b);
-    } else if (chosenOperator == divide) {
+    } else if (operator == 'divide') {
         return divide(a, b);
     } else {
-        return "Error. Please choose one of the following: add, subtract, multiply, or divide";
+        return "Error.";
     }
-
 }
 
 buttons.forEach((button ) => {
