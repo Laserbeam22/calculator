@@ -20,6 +20,7 @@ const ac = function() {
     num2.length = 0;
     currentValue.length = 0;
     chosenOperator.length = 0;
+    dec.disabled = false;
 }
 
 const buttons = document.querySelectorAll("button");
