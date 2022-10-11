@@ -65,7 +65,7 @@ body {
     border: 4px solid rgb(20, 103, 99);
 }
 
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #decimal {
+.number, #decimal {
     background-color: rgb(235, 210, 181);
 }
 
@@ -73,7 +73,7 @@ body {
     background-color: rgb(239, 174, 99);
 }
 
-#buttons > #ac {
+#ac {
     color: rgb(198, 0, 0);
     background-color: rgb(253, 165, 124);
 }
