@@ -23,6 +23,7 @@ const ac = function() {
 }
 
 const buttons = document.querySelectorAll("button");
+const dec = document.querySelector("#decimal");
 
 const num1 = new Array();
 const num2 = new Array();
