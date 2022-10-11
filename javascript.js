@@ -18,6 +18,8 @@ const ac = function() {
     display.replaceChildren("0");
     num1.length = 0;
     num2.length = 0;
+    currentValue.length = 0;
+    chosenOperator.length = 0;
 }
 
 const operate = function(chosenOperator, num1, num2) {
