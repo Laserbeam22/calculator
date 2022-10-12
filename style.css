@@ -39,8 +39,6 @@ body {
 }
 
 #buttons {
-    background-color:rgb(149, 255, 250);
-    /* above is for visual distinction */
     margin-top: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
