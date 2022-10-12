@@ -21,6 +21,7 @@ body {
     height: 95vh;
     aspect-ratio: 2/3;
     grid-template-rows: 1fr 5fr;
+    grid-template-columns: minmax(0, 1fr);
     margin-top: 2vh;
     border-radius: 2%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
