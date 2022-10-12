@@ -23,6 +23,11 @@ const ac = function() {
     dec.disabled = false;
 }
 
+const round = function(num) {
+    var multiplier = Math.pow(10, 4);
+    return Math.round(num * multiplier) / multiplier;
+}
+
 const buttons = document.querySelectorAll("button");
 const dec = document.querySelector("#decimal");
 
