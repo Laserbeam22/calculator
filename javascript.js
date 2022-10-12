@@ -60,12 +60,25 @@ buttons.forEach((button ) => {
         if (event.target == dec) {
             dec.disabled = true;
         }       
-        if (currentValue.length > 0) {
-            num1.length = 0;
-            num2.length = 0;
-            num1.push(currentValue[0]);
-        }
-        if (num1.length > 0 && chosenOperator.length > 0 && !op) {
+        if (num1.length > 0 && num2.length > 0 && currentValue.length > 0) {
+            if (!op && !eq) {
+                num1.length = 0;
+                num2.length = 0;
+                currentValue.length = 0;
+                num1.push(event.target.textContent);
+                display.textContent = event.target.textContent;
+            }
+            if (op) {
+                if (chosenOperator.length > 0) {
+                    chosenOperator.length = 0;
+                }
+                chosenOperator.push(event.target.id);
+                dec.disabled = false;
+                num1.length = 0;
+                num2.length = 0;
+                num1.push(currentValue[0]);
+            }
+        } else if (num1.length > 0 && chosenOperator.length > 0 && !op) {
             num2.push(event.target.textContent);
             display.textContent = num2.join('');
             currentValue.length = 0;
