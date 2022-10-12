@@ -99,6 +99,7 @@ buttons.forEach((button ) => {
 
 const equals = function() {
     if (num1.length > 0 && chosenOperator.length > 0 && num2.length > 0) {
+         currentValue.length = 0;
          display.textContent = operate(chosenOperator, +num1.join(''), +num2.join(''));
          currentValue.push(operate(chosenOperator, +num1.join(''), +num2.join('')));
     } else if (num1.length > 0 && chosenOperator.length > 0) {
