@@ -75,7 +75,7 @@ body {
     background-color: rgb(235, 210, 181);
 }
 
-.operator {
+.operator, #negative {
     background-color: rgb(239, 174, 99);
 }
 
