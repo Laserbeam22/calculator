@@ -86,7 +86,7 @@ body {
     background-color: rgb(239, 174, 99);
 }
 
-#ac {
+#ac, #backspace {
     color: rgb(198, 0, 0);
     background-color: rgb(253, 165, 124);
 }
