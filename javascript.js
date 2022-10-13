@@ -54,6 +54,8 @@ buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
         const op = event.target.classList.contains("operator");
         const eq = event.target.classList.contains("equals");
+        const neg = event.target.classList.contains("negative");
+        const back = event.target.classList.contains("backspace");
 
         if (event.target.textContent == "AC") {
             return ac();
