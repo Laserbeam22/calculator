@@ -77,10 +77,6 @@ buttons.forEach((button ) => {
         }       
         //if already gone through a full calculation
         if (num1.length > 0 && num2.length > 0 && currentValue.length > 0) {
-            if (back) {
-                backspace(num1);
-                display.textContent = num1.join('');
-            }
             //if a number is clicked -it gets rid of previous calc.
             if (!op && !eq && !back && !neg) {
                 //Reset array values, push new number to num1, & display it
