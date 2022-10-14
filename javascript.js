@@ -28,6 +28,14 @@ const round = function(num) {
     return Math.round(num * multiplier) / multiplier;
 }
 
+const backspace = function(arr) {
+    newArr = arr.pop();
+    if(arr.length < 1) {
+        arr.push("0");
+    }
+    return arr;
+}
+
 const buttons = document.querySelectorAll("button");
 const dec = document.querySelector("#decimal");
 
