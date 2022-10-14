@@ -112,6 +112,9 @@ buttons.forEach((button ) => {
                 display.textContent = num2.join('');
             }
             if (!back) {
+                if(num2[0] == "0") {
+                    newAr = num2.shift();
+                }
                 num2.push(event.target.textContent);
                 display.textContent = num2.join('');
                 currentValue.length = 0;
@@ -123,6 +126,9 @@ buttons.forEach((button ) => {
                 display.textContent = num1.join('');
             }
             if (!back) {
+                if(num1[0] == "0") {
+                    newAr = num1.shift();
+                }
                 num1.push(event.target.textContent);
                 display.textContent = num1.join(''); 
             }
