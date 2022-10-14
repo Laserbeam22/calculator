@@ -67,35 +67,46 @@ buttons.forEach((button ) => {
         if (event.target == dec) {
             dec.disabled = true;
         }       
+        //if already gone through a full calculation
         if (num1.length > 0 && num2.length > 0 && currentValue.length > 0) {
-            if (!op && !eq) {
+            //if a number is clicked -it gets rid of previous calc.
+            if (!op && !eq && !back && !neg) {
+                //Reset array values, push new number to num1, & display it
                 num1.length = 0;
                 num2.length = 0;
                 currentValue.length = 0;
                 num1.push(event.target.textContent);
                 display.textContent = event.target.textContent;
             }
+            //if an operator is clicked -it keeps the original sum & continues a new calc. off of it 
             if (op) {
+                //if op is clicked AND the previous click was also op
                 if (chosenOperator.length > 0) {
                     chosenOperator.length = 0;
                 }
+                //Push new value to chosenOp., enable dec. again, then push original sum as new num1
                 chosenOperator.push(event.target.id);
                 dec.disabled = false;
                 num1.length = 0;
                 num2.length = 0;
                 num1.push(currentValue[0]);
             }
+            //if num1 & op have been chosen, but not num2 (& !another op)
         } else if (num1.length > 0 && chosenOperator.length > 0 && !op) {
+            //Add numbers to num2, display new numbers, & reset previous sum (if any)
             num2.push(event.target.textContent);
             display.textContent = num2.join('');
             currentValue.length = 0;
         } else if (!op) {
+            //Add numbers to num1
             num1.push(event.target.textContent);
             display.textContent = num1.join(''); 
         } else if (op) {
+            //Replace old op w/ new op
             if (chosenOperator.length > 0) {
                 chosenOperator.length = 0;
             }
+            //Add op to chosenOp. & enable dec.
             chosenOperator.push(event.target.id);
             dec.disabled = false;
         } else {
