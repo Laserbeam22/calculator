@@ -74,6 +74,7 @@ buttons.forEach((button ) => {
                 //Reset array values, push new number to num1, & display it
                 num1.length = 0;
                 num2.length = 0;
+                chosenOperator.length = 0;
                 currentValue.length = 0;
                 num1.push(event.target.textContent);
                 display.textContent = event.target.textContent;
