@@ -77,6 +77,10 @@ buttons.forEach((button ) => {
         }       
         //if already gone through a full calculation
         if (num1.length > 0 && num2.length > 0 && currentValue.length > 0) {
+            if (back) {
+                backspace(num1);
+                display.textContent = num1.join('');
+            }
             //if a number is clicked -it gets rid of previous calc.
             if (!op && !eq && !back && !neg) {
                 //Reset array values, push new number to num1, & display it
@@ -103,13 +107,25 @@ buttons.forEach((button ) => {
             //if num1 & op have been chosen, but not num2 (& !another op)
         } else if (num1.length > 0 && chosenOperator.length > 0 && !op) {
             //Add numbers to num2, display new numbers, & reset previous sum (if any)
-            num2.push(event.target.textContent);
-            display.textContent = num2.join('');
-            currentValue.length = 0;
+            if (back) {
+                backspace(num2);
+                display.textContent = num2.join('');
+            }
+            if (!back) {
+                num2.push(event.target.textContent);
+                display.textContent = num2.join('');
+                currentValue.length = 0;
+            }
         } else if (!op) {
             //Add numbers to num1
-            num1.push(event.target.textContent);
-            display.textContent = num1.join(''); 
+            if (back) {
+                backspace(num1);
+                display.textContent = num1.join('');
+            }
+            if (!back) {
+                num1.push(event.target.textContent);
+                display.textContent = num1.join(''); 
+            }
         } else if (op) {
             //Replace old op w/ new op
             if (chosenOperator.length > 0) {
