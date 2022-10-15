@@ -36,6 +36,15 @@ const backspace = function(arr) {
     return arr;
 }
 
+const negative = function(arr) {
+    if (arr[0] == "-") {
+        newArr = arr.shift();
+    } else {
+        arr.unshift("-");
+    }
+    return arr;
+}
+
 const buttons = document.querySelectorAll("button");
 const dec = document.querySelector("#decimal");
 
