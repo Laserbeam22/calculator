@@ -45,10 +45,16 @@ const negative = function(arr) {
     return arr;
 }
 
-const decCheck = function() {
+const decCheck1 = function() {
     if (num1.includes('.')) {
         dec.disabled = true;
-    } else if (num2.includes('.')) {
+    } else {
+        dec.disabled = false;
+    }
+}
+
+const decCheck2 = function() {
+    if (num2.includes('.')) {
         dec.disabled = true;
     } else {
         dec.disabled = false;
