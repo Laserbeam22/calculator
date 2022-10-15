@@ -45,6 +45,16 @@ const negative = function(arr) {
     return arr;
 }
 
+const decCheck = function() {
+    if (num1.includes('.')) {
+        dec.disabled = true;
+    } else if (num2.includes('.')) {
+        dec.disabled = true;
+    } else {
+        dec.disabled = false;
+    }
+}
+
 const buttons = document.querySelectorAll("button");
 const dec = document.querySelector("#decimal");
 
