@@ -112,11 +112,15 @@ buttons.forEach((button ) => {
             //if num1 & op have been chosen, but not num2 (& !another op)
         } else if (num1.length > 0 && chosenOperator.length > 0 && !op) {
             //Add numbers to num2, display new numbers, & reset previous sum (if any)
+            if (neg) {
+                negative(num2);
+                display.textContent = num2.join('');
+            }
             if (back) {
                 backspace(num2);
                 display.textContent = num2.join('');
             }
-            if (!back) {
+            if (!back && !neg) {
                 if(num2[0] == "0") {
                     newAr = num2.shift();
                 }
@@ -126,11 +130,15 @@ buttons.forEach((button ) => {
             }
         } else if (!op) {
             //Add numbers to num1
+            if (neg) {
+                negative(num1);
+                display.textContent = num1.join('');
+            }
             if (back) {
                 backspace(num1);
                 display.textContent = num1.join('');
             }
-            if (!back) {
+            if (!back && !neg) {
                 if(num1[0] == "0") {
                     newAr = num1.shift();
                 }
