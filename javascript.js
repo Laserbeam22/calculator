@@ -94,7 +94,6 @@ buttons.forEach((button ) => {
             return ac();
         }
         if (eq) {
-            dec.disabled = false;
             return equals();
         }
         if (event.target == dec) {
@@ -134,6 +133,7 @@ buttons.forEach((button ) => {
             }
             if (back) {
                 backspace(num2);
+                decCheck2();
                 display.textContent = num2.join('');
             }
             if (!back && !neg) {
@@ -156,6 +156,7 @@ buttons.forEach((button ) => {
             }
             if (back) {
                 backspace(num1);
+                decCheck1();
                 display.textContent = num1.join('');
             }
             if (!back && !neg) {
@@ -188,6 +189,7 @@ const equals = function() {
          currentValue.length = 0;
          display.textContent = operate(chosenOperator, +num1.join(''), +num2.join(''));
          currentValue.push(operate(chosenOperator, +num1.join(''), +num2.join('')));
+         dec.disabled = false;
     } else if (num1.length > 0 && chosenOperator.length > 0) {
          display.textContent = +num1.join('');
          currentValue.push(display.textContent);
