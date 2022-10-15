@@ -124,6 +124,10 @@ buttons.forEach((button ) => {
                 if(num2[0] == "0") {
                     newAr = num2.shift();
                 }
+                if(num2[0] == "-" && num2[1] == "0") {
+                    num2.splice(1,1);
+                    display.textContent = num2.join('');   
+                }
                 num2.push(event.target.textContent);
                 display.textContent = num2.join('');
                 currentValue.length = 0;
@@ -141,6 +145,10 @@ buttons.forEach((button ) => {
             if (!back && !neg) {
                 if(num1[0] == "0") {
                     newAr = num1.shift();
+                }
+                if(num1[0] == "-" && num1[1] == "0") {
+                    num1.splice(1,1);
+                    display.textContent = num1.join('');   
                 }
                 num1.push(event.target.textContent);
                 display.textContent = num1.join(''); 
