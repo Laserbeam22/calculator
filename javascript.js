@@ -230,3 +230,10 @@ function closeModal(modal) {
     overlay.classList.remove('active')
     ac();
 }
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal')
+      closeModal(modal)
+    })
+})
