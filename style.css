@@ -123,3 +123,7 @@ body {
     left: 100%;
     transform: translate(-100%, -860%);
 }
+
+.img {
+    height: 50vh;
+}
