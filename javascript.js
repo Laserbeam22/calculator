@@ -207,3 +207,8 @@ const equals = function() {
          return "Error in equals.";
     }
 }
+
+//MODAL SECTION
+
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
