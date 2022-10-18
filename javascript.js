@@ -129,6 +129,7 @@ buttons.forEach((button ) => {
                 num1.length = 0;
                 num2.length = 0;
                 num1.push(currentValue[0]);
+                currentValue.length = 0;
             }
             //if num1 & op have been chosen, but not num2 (& !another op)
         } else if (num1.length > 0 && chosenOperator.length > 0 && !op) {
