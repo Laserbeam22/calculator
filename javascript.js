@@ -11,7 +11,12 @@ const multiply = function(a, b) {
 }
 
 const divide = function(a, b) {
-    return round(a / b);
+    let sum = a / b;
+    if (sum == "Infinity") {
+        const modal = document.querySelector('.modal');
+        openModal(modal);
+    }
+    return round(sum);
 }
 
 const ac = function() {
