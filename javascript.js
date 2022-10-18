@@ -12,7 +12,7 @@ const multiply = function(a, b) {
 
 const divide = function(a, b) {
     let sum = a / b;
-    if (sum == "Infinity") {
+    if (sum == "Infinity" || sum == "-Infinity") {
         const modal = document.querySelector('.modal');
         openModal(modal);
     }
