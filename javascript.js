@@ -98,6 +98,12 @@ buttons.forEach((button ) => {
         }
         if (event.target == dec) {
             dec.disabled = true;
+        }
+        if (op) {
+            //Allows default display of '0' to be used as num1
+            if (num1.length < 1 && num2.length < 1) {
+                num1.push("0");
+            }
         }       
         //if already gone through a full calculation
         if (num1.length > 0 && num2.length > 0 && currentValue.length > 0) {
@@ -176,6 +182,7 @@ buttons.forEach((button ) => {
                 chosenOperator.length = 0;
             }
             //Add op to chosenOp. & enable dec.
+            currentValue.length = 0;
             chosenOperator.push(event.target.id);
             dec.disabled = false;
         } else {
