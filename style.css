@@ -139,3 +139,8 @@ body {
     pointer-events: none;
     transition: 200ms ease-in-out;
 }
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
