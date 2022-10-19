@@ -248,6 +248,7 @@ overlay.addEventListener('click', () => {
 //KEYBOARD SUPPORT
 
 document.addEventListener('keydown', (e) => {
+    if(overlay.classList != "active") {
         if(e.key == '+') {document.getElementById('add').click();}
         if(e.key == '-') {document.getElementById('subtract').click();}
         if(e.key == '*') {document.getElementById('multiply').click();}
@@ -267,4 +268,5 @@ document.addEventListener('keydown', (e) => {
         if(e.key == '7') {document.getElementById('seven').click();}
         if(e.key == '8') {document.getElementById('eight').click();}
         if(e.key == '9') {document.getElementById('nine').click();}
+    }
 })
