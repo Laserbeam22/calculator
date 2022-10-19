@@ -269,4 +269,9 @@ document.addEventListener('keydown', (e) => {
         if(e.key == '8') {document.getElementById('eight').click();}
         if(e.key == '9') {document.getElementById('nine').click();}
     }
+    if(overlay.classList == "active") {
+        if(e.key == "Escape") {
+            document.getElementById("close").click();
+        }
+    }
 })
