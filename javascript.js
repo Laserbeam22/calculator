@@ -88,13 +88,57 @@ const operate = function(operator, a, b) {
     }
 }
 
+//Style Change Section
+
+const changeStyle = function() {
+    document.body.classList.add("active");
+    document.querySelector("#container").classList.add("active");
+    document.querySelector("#display").classList.add("active");
+    document.querySelectorAll(".operator").forEach(op => {
+        op.classList.add("active");
+    })
+    document.querySelectorAll(".number").forEach(button => {
+        button.classList.add("active");
+    })
+    document.querySelector("#negative").classList.add("active");
+    document.querySelector("#ac").classList.add("active");
+    document.querySelector("#backspace").classList.add("active");
+    document.querySelector("#equals").classList.add("active");
+    dec.classList.add("active");
+}
+
+const undoChange = function() {
+    document.body.classList.remove("active");
+    document.querySelector("#container").classList.remove("active");
+    document.querySelector("#display").classList.remove("active");
+    document.querySelectorAll(".operator").forEach(op => {
+        op.classList.remove("active");
+    })
+    document.querySelectorAll(".number").forEach(button => {
+        button.classList.remove("active");
+    })
+    document.querySelector("#negative").classList.remove("active");
+    document.querySelector("#ac").classList.remove("active");
+    document.querySelector("#backspace").classList.remove("active");
+    document.querySelector("#equals").classList.remove("active");
+    dec.classList.remove("active");
+}
+
 buttons.forEach((button ) => {
     button.addEventListener('click', (event) => {
         const op = event.target.classList.contains("operator");
         const eq = event.target.classList.contains("equals");
         const neg = event.target.classList.contains("negative");
         const back = event.target.classList.contains("backspace");
+        const change = document.querySelector("#change");
 
+        if(event.target == change) {
+            if(dec.classList.contains("active")) {
+                return undoChange();
+            } else {
+                return changeStyle();
+            }
+        }
         if (event.target.textContent == "AC") {
             return ac();
         }
