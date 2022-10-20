@@ -125,27 +125,27 @@ const undoChange = function() {
 }
 
 buttons.forEach((button ) => {
-    button.addEventListener('click', (event) => {
-        const op = event.target.classList.contains("operator");
-        const eq = event.target.classList.contains("equals");
-        const neg = event.target.classList.contains("negative");
-        const back = event.target.classList.contains("backspace");
+    button.addEventListener('click', (e) => {
+        const op = e.target.classList.contains("operator");
+        const eq = e.target.classList.contains("equals");
+        const neg = e.target.classList.contains("negative");
+        const back = e.target.classList.contains("backspace");
         const change = document.querySelector("#change");
 
-        if(event.target == change) {
+        if(e.target == change) {
             if(dec.classList.contains("active")) {
                 return undoChange();
             } else {
                 return changeStyle();
             }
         }
-        if (event.target.textContent == "AC") {
+        if (e.target.textContent == "AC") {
             return ac();
         }
         if (eq) {
             return equals();
         }
-        if (event.target == dec) {
+        if (e.target == dec) {
             dec.disabled = true;
         }
         if (op) {
@@ -163,8 +163,8 @@ buttons.forEach((button ) => {
                 num2.length = 0;
                 chosenOperator.length = 0;
                 currentValue.length = 0;
-                num1.push(event.target.textContent);
-                display.textContent = event.target.textContent;
+                num1.push(e.target.textContent);
+                display.textContent = e.target.textContent;
             }
             //if an operator is clicked -it keeps the original sum & continues a new calc. off of it 
             if (op) {
@@ -173,7 +173,7 @@ buttons.forEach((button ) => {
                     chosenOperator.length = 0;
                 }
                 //Push new value to chosenOp., enable dec. again, then push original sum as new num1
-                chosenOperator.push(event.target.id);
+                chosenOperator.push(e.target.id);
                 dec.disabled = false;
                 num1.length = 0;
                 num2.length = 0;
@@ -200,7 +200,7 @@ buttons.forEach((button ) => {
                     num2.splice(1,1);
                     display.textContent = num2.join('');   
                 }
-                num2.push(event.target.textContent);
+                num2.push(e.target.textContent);
                 display.textContent = num2.join('');
                 currentValue.length = 0;
             }
@@ -223,7 +223,7 @@ buttons.forEach((button ) => {
                     num1.splice(1,1);
                     display.textContent = num1.join('');   
                 }
-                num1.push(event.target.textContent);
+                num1.push(e.target.textContent);
                 display.textContent = num1.join(''); 
             }
         } else if (op) {
@@ -233,7 +233,7 @@ buttons.forEach((button ) => {
             }
             //Add op to chosenOp. & enable dec.
             currentValue.length = 0;
-            chosenOperator.push(event.target.id);
+            chosenOperator.push(e.target.id);
             dec.disabled = false;
         } else {
             return "Error.";
