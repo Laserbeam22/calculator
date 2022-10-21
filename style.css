@@ -170,7 +170,7 @@ body {
 
 #container.active {
     background-color: rgb(10 166 167);
-    border: 10px solid rgb(143 244 239);
+    border: .6vw solid rgb(143 244 239);
 }
 
 #display.active {
