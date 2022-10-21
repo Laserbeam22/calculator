@@ -40,8 +40,8 @@ body {
     grid-template-columns: minmax(0, 1fr);
     margin-top: 2vh;
     border-radius: 8px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border: 10px solid rgb(135 237 232);
+    box-shadow: 1.5vh 1.5vh 0.6vh rgb(0 0 0 / 10%), 0 0.3vh 4vh 3vh rgb(0 0 0 / 17%);
+    border: .6vw solid rgb(135 237 232);
 }
 
 #display {
@@ -91,8 +91,9 @@ body {
 #buttons > button {
     font-size: 6vh;
     border-radius: 8px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border: 4px solid rgb(20, 103, 99);
+    box-shadow: 0.8vh 1vh 0.2vh rgba(0,0,0,0.10), 0 .3vh 2vh 0 rgba(0,0,0,0.17);
+    border-width: 0.5vw;
+    border-color: #be545496;
     cursor: pointer;
 }
 
