@@ -180,21 +180,25 @@ body {
 .number.active, #decimal.active {
     background-color: rgb(82 228 185); 
     color:  #9c27b0e0;
+    box-shadow: 0.8vh 1vh 0.2vh rgba(0,0,0,0.10), 0 .3vh 2vh 0 rgba(0,0,0,0.17);
 }
 
 .operator.active, #negative.active {
     background-color: rgb(255 165 53 / 91%);
     color: #84329b;
+    box-shadow: 0.8vh 1vh 0.2vh rgba(0,0,0,0.10), 0 .3vh 2vh 0 rgba(0,0,0,0.17);
 }
 
 #ac.active, #backspace.active {
     color: rgb(82 228 185);
     background-color: #9c27b0e0;
+    box-shadow: 0.8vh 1vh 0.2vh rgba(0,0,0,0.10), 0 .3vh 2vh 0 rgba(0,0,0,0.17);
 }
 
 #equals.active {
     background-color: rgb(143 244 239);
     color: rgb(7 152 152);
+    box-shadow: 0.8vh 1vh 0.2vh rgba(0,0,0,0.10), 0 .3vh 2vh 0 rgba(0,0,0,0.17);
 }
 
 body.active {
