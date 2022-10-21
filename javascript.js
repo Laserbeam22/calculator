@@ -1,3 +1,5 @@
+//BASIC FUNCTIONS
+
 const add = function(a, b) {
     return round(a + b);
 }
@@ -66,14 +68,6 @@ const decCheck2 = function() {
     }
 }
 
-const buttons = document.querySelectorAll("button");
-const dec = document.querySelector("#decimal");
-
-const num1 = new Array();
-const num2 = new Array();
-const chosenOperator = new Array();
-const currentValue = new Array();
-
 const operate = function(operator, a, b) {
     if(operator == 'add') {
         return add(a, b);
@@ -88,41 +82,33 @@ const operate = function(operator, a, b) {
     }
 }
 
-//Style Change Section
-
-const changeStyle = function() {
-    document.body.classList.add("active");
-    document.querySelector("#container").classList.add("active");
-    document.querySelector("#display").classList.add("active");
-    document.querySelectorAll(".operator").forEach(op => {
-        op.classList.add("active");
-    })
-    document.querySelectorAll(".number").forEach(button => {
-        button.classList.add("active");
-    })
-    document.querySelector("#negative").classList.add("active");
-    document.querySelector("#ac").classList.add("active");
-    document.querySelector("#backspace").classList.add("active");
-    document.querySelector("#equals").classList.add("active");
-    dec.classList.add("active");
+const equals = function() {
+    if (num1.length > 0 && chosenOperator.length > 0 && num2.length > 0) {
+         currentValue.length = 0;
+         display.textContent = operate(chosenOperator, +num1.join(''), +num2.join(''));
+         currentValue.push(operate(chosenOperator, +num1.join(''), +num2.join('')));
+         dec.disabled = false;
+    } else if (num1.length > 0 && chosenOperator.length > 0) {
+         display.textContent = +num1.join('');
+         currentValue.push(display.textContent);
+    } else if (num1.length < 1) {
+         display.textContent = "0";
+    } else {
+         return "Error in equals.";
+    }
 }
 
-const undoChange = function() {
-    document.body.classList.remove("active");
-    document.querySelector("#container").classList.remove("active");
-    document.querySelector("#display").classList.remove("active");
-    document.querySelectorAll(".operator").forEach(op => {
-        op.classList.remove("active");
-    })
-    document.querySelectorAll(".number").forEach(button => {
-        button.classList.remove("active");
-    })
-    document.querySelector("#negative").classList.remove("active");
-    document.querySelector("#ac").classList.remove("active");
-    document.querySelector("#backspace").classList.remove("active");
-    document.querySelector("#equals").classList.remove("active");
-    dec.classList.remove("active");
-}
+//GLOBAL CONSTANTS
+
+const buttons = document.querySelectorAll("button");
+const dec = document.querySelector("#decimal");
+
+const num1 = new Array();
+const num2 = new Array();
+const chosenOperator = new Array();
+const currentValue = new Array();
+
+//MAIN EVENT LISTENER --contains main logic for calculator
 
 buttons.forEach((button ) => {
     button.addEventListener('click', (e) => {
@@ -241,20 +227,71 @@ buttons.forEach((button ) => {
     })
 })
 
-const equals = function() {
-    if (num1.length > 0 && chosenOperator.length > 0 && num2.length > 0) {
-         currentValue.length = 0;
-         display.textContent = operate(chosenOperator, +num1.join(''), +num2.join(''));
-         currentValue.push(operate(chosenOperator, +num1.join(''), +num2.join('')));
-         dec.disabled = false;
-    } else if (num1.length > 0 && chosenOperator.length > 0) {
-         display.textContent = +num1.join('');
-         currentValue.push(display.textContent);
-    } else if (num1.length < 1) {
-         display.textContent = "0";
-    } else {
-         return "Error in equals.";
+//KEYBOARD SUPPORT
+
+document.addEventListener('keydown', (e) => {
+    if(overlay.classList != "active") {
+        if(e.key == '+') {document.getElementById('add').click();}
+        if(e.key == '-') {document.getElementById('subtract').click();}
+        if(e.key == '*') {document.getElementById('multiply').click();}
+        if(e.key == "/") {document.getElementById('divide').click();}
+        if(e.key == '.') {document.getElementById('decimal').click();}
+        if(e.key == 'Escape') {document.getElementById('ac').click();}
+        if(e.key == 'Enter') {document.getElementById('equals').click();}
+        if(e.key == '–') {document.getElementById('negative').click();}
+        if(e.key == 'Backspace') {document.getElementById('backspace').click();}
+        if(e.key == '0') {document.getElementById('zero').click();}
+        if(e.key == '1') {document.getElementById('one').click();}
+        if(e.key == '2') {document.getElementById('two').click();}
+        if(e.key == '3') {document.getElementById('three').click();}
+        if(e.key == '4') {document.getElementById('four').click();}
+        if(e.key == '5') {document.getElementById('five').click();}
+        if(e.key == '6') {document.getElementById('six').click();}
+        if(e.key == '7') {document.getElementById('seven').click();}
+        if(e.key == '8') {document.getElementById('eight').click();}
+        if(e.key == '9') {document.getElementById('nine').click();}
     }
+    if(overlay.classList == "active") {
+        if(e.key == "Escape") {
+            document.getElementById("close").click();
+        }
+    }
+})
+
+//STYLE CHANGE FUNCTIONS
+
+const changeStyle = function() {
+    document.body.classList.add("active");
+    document.querySelector("#container").classList.add("active");
+    document.querySelector("#display").classList.add("active");
+    document.querySelectorAll(".operator").forEach(op => {
+        op.classList.add("active");
+    })
+    document.querySelectorAll(".number").forEach(button => {
+        button.classList.add("active");
+    })
+    document.querySelector("#negative").classList.add("active");
+    document.querySelector("#ac").classList.add("active");
+    document.querySelector("#backspace").classList.add("active");
+    document.querySelector("#equals").classList.add("active");
+    dec.classList.add("active");
+}
+
+const undoChange = function() {
+    document.body.classList.remove("active");
+    document.querySelector("#container").classList.remove("active");
+    document.querySelector("#display").classList.remove("active");
+    document.querySelectorAll(".operator").forEach(op => {
+        op.classList.remove("active");
+    })
+    document.querySelectorAll(".number").forEach(button => {
+        button.classList.remove("active");
+    })
+    document.querySelector("#negative").classList.remove("active");
+    document.querySelector("#ac").classList.remove("active");
+    document.querySelector("#backspace").classList.remove("active");
+    document.querySelector("#equals").classList.remove("active");
+    dec.classList.remove("active");
 }
 
 //MODAL SECTION
@@ -287,35 +324,4 @@ overlay.addEventListener('click', () => {
     modals.forEach(modal => {
       closeModal(modal)
     })
-})
-
-//KEYBOARD SUPPORT
-
-document.addEventListener('keydown', (e) => {
-    if(overlay.classList != "active") {
-        if(e.key == '+') {document.getElementById('add').click();}
-        if(e.key == '-') {document.getElementById('subtract').click();}
-        if(e.key == '*') {document.getElementById('multiply').click();}
-        if(e.key == "/") {document.getElementById('divide').click();}
-        if(e.key == '.') {document.getElementById('decimal').click();}
-        if(e.key == 'Escape') {document.getElementById('ac').click();}
-        if(e.key == 'Enter') {document.getElementById('equals').click();}
-        if(e.key == '–') {document.getElementById('negative').click();}
-        if(e.key == 'Backspace') {document.getElementById('backspace').click();}
-        if(e.key == '0') {document.getElementById('zero').click();}
-        if(e.key == '1') {document.getElementById('one').click();}
-        if(e.key == '2') {document.getElementById('two').click();}
-        if(e.key == '3') {document.getElementById('three').click();}
-        if(e.key == '4') {document.getElementById('four').click();}
-        if(e.key == '5') {document.getElementById('five').click();}
-        if(e.key == '6') {document.getElementById('six').click();}
-        if(e.key == '7') {document.getElementById('seven').click();}
-        if(e.key == '8') {document.getElementById('eight').click();}
-        if(e.key == '9') {document.getElementById('nine').click();}
-    }
-    if(overlay.classList == "active") {
-        if(e.key == "Escape") {
-            document.getElementById("close").click();
-        }
-    }
 })
