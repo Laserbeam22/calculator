@@ -13,6 +13,19 @@ body {
     margin: auto;
 }
 
+#change {
+    background-color: #000000;
+    padding: 0.4vw;
+    border-radius: 8px;
+    font-size: 1vw;
+    border-width: 0.4vw;
+    min-width: fit-content;
+    border-color: #0aa6a7;
+    color: #8ff4ef;
+    white-space: nowrap;
+    box-shadow: 0.6vh 0.6vh 0.6vh rgb(0 0 0 / 10%), 0vh 0.3vh 3vh 1vh rgb(0 0 0 / 17%);
+}
+
 #container {
     background-color: rgb(149, 255, 250);
     /* above is for visual distinction */
