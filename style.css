@@ -10,7 +10,10 @@ body {
     /* above is for visual distinction */
     min-height: 100%;
     max-width: fit-content;
-    margin: auto;
+    display: grid;
+    grid-gap: 20vw;
+    align-items: flex-start;
+    grid: 100px 300px/1fr 3fr;
 }
 
 #change {
