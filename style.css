@@ -32,7 +32,7 @@ body {
 #container {
     background-color: rgb(149, 255, 250);
     /* above is for visual distinction */
-    padding: 5%;
+    padding: 1.5vw;
     display: grid;
     height: 95vh;
     aspect-ratio: 2/3;
@@ -61,7 +61,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0.7vw;
+    gap: 0.4vw;
     padding-top: 1vh;
 }
 
