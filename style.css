@@ -7,13 +7,11 @@
 
 body {
     background-color: rgb(107, 196, 107);
-    /* above is for visual distinction */
     min-height: 100%;
-    max-width: fit-content;
-    display: grid;
-    grid-gap: 20vw;
+    display: flex;
     align-items: flex-start;
-    grid: 100px 300px/1fr 3fr;
+    flex-direction: column;
+    align-items: center;
 }
 
 #change {
@@ -27,21 +25,22 @@ body {
     color: #8ff4ef;
     white-space: nowrap;
     box-shadow: 0.6vh 0.6vh 0.6vh rgb(0 0 0 / 10%), 0vh 0.3vh 3vh 1vh rgb(0 0 0 / 17%);
+    align-self: flex-start;
 }
 
 #container {
     background-color: rgb(149, 255, 250);
-    /* above is for visual distinction */
     padding: 1.5vw;
     display: grid;
     height: 95vh;
     aspect-ratio: 2/3;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: minmax(0, 1fr);
-    margin-top: 2vh;
+    margin-top: -3.2vh;
+    margin-bottom: 0.5vh;
     border-radius: 8px;
     box-shadow: 1.5vh 1.5vh 0.6vh rgb(0 0 0 / 10%), 0 0.3vh 4vh 3vh rgb(0 0 0 / 17%);
-    border: .6vw solid rgb(135 237 232);
+    border: 0.6vw solid rgb(135 237 232);
 }
 
 #display {
