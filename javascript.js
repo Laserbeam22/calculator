@@ -167,7 +167,7 @@ buttons.forEach((button ) => {
             }
             if (back) {
                 backspace(num2);
-                decCheck2();
+                isDec(num2);
                 display.textContent = num2.join('');
             }
             if (!back && !neg) {
@@ -190,7 +190,7 @@ buttons.forEach((button ) => {
             }
             if (back) {
                 backspace(num1);
-                decCheck1();
+                isDec(num1);
                 display.textContent = num1.join('');
             }
             if (!back && !neg) {
