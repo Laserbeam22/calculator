@@ -21,7 +21,7 @@ const divide = function(a, b) {
     return round(sum);
 }
 
-const ac = function() {
+const allClear = function() {
     display.replaceChildren("0");
     num1.length = 0;
     num2.length = 0;
@@ -118,7 +118,7 @@ buttons.forEach((button ) => {
             }
         }
         if (e.target.textContent == "AC") {
-            return ac();
+            return allClear();
         }
         if (eq) {
             return equals();
