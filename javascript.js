@@ -205,9 +205,13 @@ buttons.forEach((button ) => {
                 display.textContent = num1.join(''); 
             }
         } else if (op) {
-            //Replace old op w/ new op
+            //Allows continual calculations w/o needing the equals button
             if (chosenOperator.length > 0) {
+                equals();
                 chosenOperator.length = 0;
+                num1.length = 0;
+                num2.length = 0;
+                num1.push(currentValue[0]);
             }
             //Add op to chosenOp. & enable dec.
             currentValue.length = 0;
